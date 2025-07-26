@@ -39,3 +39,25 @@
 
 # debug information files
 *.dwo
+
+# Build results
+[Bb]in/
+[Oo]bj/
+*.ilk
+*.pdb
+*.ipch
+*.aps
+*.ncb
+*.sdf
+*.opensdf
+*.cachefile
+*.log
+*.tlog
+*.lastbuildstate
+*.idb
+
+# Visual Studio user-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
