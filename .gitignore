@@ -61,3 +61,5 @@
 *.user
 *.userosscache
 *.sln.docstates
+**/.vs/
+*.exe.recipe

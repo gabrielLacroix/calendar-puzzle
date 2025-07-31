@@ -26,15 +26,16 @@ int main(int argc, char* argv[])
 	
 	for (int i = 0; i < N; ++i)
 	{
+		Piece piece = pieces[i];
 		std::cout << std::format("Piece {}", i) << std::endl;
-		pieces[i].print();
+		piece.print();
 		std::cout << std::endl;
-		pieces[i].rotate().print();
+		piece.flip().print();
 		std::cout << std::endl;
-		pieces[i].rotate().rotate().print();
-		std::cout << std::endl;
-		pieces[i].rotate().rotate().rotate().print();
-		std::cout << std::endl << std::endl;
+		//piece.rotate().rotate().print();
+		//std::cout << std::endl;
+		//piece.rotate().rotate().rotate().print();
+		//std::cout << std::endl << std::endl;
 	}
 }
 

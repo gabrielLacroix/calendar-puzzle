@@ -31,10 +31,10 @@ Piece
 Piece::rotate() {
 	std::vector<std::vector <char>> rotated;
 
-	for (int i = width - 1; i >= 0; --i) {
+	for (int i = heigth - 1; i >= 0; --i) {
 		std::vector<char> row;
 
-		for (int j = 0; j < heigth; ++j) {
+		for (int j = 0; j < width; ++j) {
 			row.push_back(grid.at(j).at(i));
 		}
 		rotated.push_back(row);
@@ -47,7 +47,7 @@ Piece
 Piece::flip() {
 	std::vector<std::vector <char>> flipped;
 
-	for (int i = width; i > 0; --i) {
+	for (int i = width - 1; i >= 0; --i) {
 		flipped.push_back(grid.at(i));
 	}
 	return Piece(width, heigth, flipped);
