@@ -5,9 +5,11 @@
 #include <vector>
 #include<format>
 #include "Piece.h"
+#include "Solver.cpp"
 
 std::vector<Piece> definePieces();
-std::vector<char> defineGrid();
+std::vector<std::vector<char>> defineGrid();
+void printGrid(const std::vector<std::vector<char>>);
 
 int main(int argc, char* argv[])
 {
@@ -18,36 +20,27 @@ int main(int argc, char* argv[])
 	//int day = (int)argv[2];
 	//int weekDay = (int)argv[3];
 
-	std::vector<char> grid = defineGrid();
+	std::vector<std::vector<char>> grid = defineGrid();
 
 	std::vector<Piece> pieces = definePieces();
 
-	enum { N = 10 };
-	
-	for (int i = 0; i < N; ++i)
-	{
-		Piece piece = pieces[i];
-		std::cout << std::format("Piece {}", i) << std::endl;
-		piece.print();
-		std::cout << std::endl;
-		piece.flip().print();
-		std::cout << std::endl;
-		//piece.rotate().rotate().print();
-		//std::cout << std::endl;
-		//piece.rotate().rotate().rotate().print();
-		//std::cout << std::endl << std::endl;
-	}
+	printGrid(grid);
+
+	addPiece(grid, pieces[0], 0, 0);
+	std::cout << std::endl;
+	printGrid(grid);
 }
 
-std::vector<char> defineGrid() {
-	std::vector<char> grid{
-		0, 0, 0, 0, 0, 0, 0, 1,
-		0, 0, 0, 0, 0, 0, 0, 1,
-		0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0, 0, 0, 0, 0, 0,
-		1, 1, 1, 1, 0, 0, 0, 0
+std::vector<std::vector<char>> defineGrid() {
+	std::vector<std::vector<char>> grid{
+		{0, 0, 0, 0, 0, 0, 1},
+		{0, 0, 0, 0, 0, 0, 1},
+		{0, 0, 0, 0, 0, 0, 1},
+		{0, 0, 0, 0, 0, 0, 1},
+		{0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0},
+		{1, 1, 0, 0, 0, 0, 0}
 	};
 	return grid;
 }
@@ -120,6 +113,20 @@ std::vector<Piece> definePieces() {
 		Piece(4, 2, p10),
 	};
 	return pieces;
+}
+
+void
+printGrid(const std::vector<std::vector<char>> grid) {
+	int width = grid.size();
+	int heigth = grid.at(0).size();
+	for (int i = 0; i < heigth; ++i) {
+		for (int j = 0; j < width; ++j)
+		{
+			std::string character = grid.at(j).at(i) == 0 ? "0" : "1";
+			std::cout << character << " ";
+		}
+		std::cout << std::endl;
+	}
 }
 
 

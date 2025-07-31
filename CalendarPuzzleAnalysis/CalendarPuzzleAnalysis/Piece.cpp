@@ -53,6 +53,11 @@ Piece::flip() {
 	return Piece(width, heigth, flipped);
 }
 
+char
+Piece::get(int x, int y) {
+	return grid.at(x).at(y);
+}
+
 void
 Piece::print() {
 	for (int i = 0; i < heigth; ++i) {

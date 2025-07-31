@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClCompile Include="CalendarPuzzleAnalysis.cpp" />
     <ClCompile Include="Piece.cpp" />
+    <ClCompile Include="Solver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Piece.h" />

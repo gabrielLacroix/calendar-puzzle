@@ -21,9 +21,10 @@ public:
 	Piece rotate();
 	Piece flip();
 	
+	char get(int x, int y);
+
 	void print();
 
 	~Piece();
-
 };
 
