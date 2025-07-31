@@ -12,26 +12,26 @@ Piece::getWidth()
 size_t
 Piece::getHeight()
 {
-	return heigth;
+	return height;
 }
 
 Piece::Piece(std::size_t p_width, std::size_t p_height, std::vector<std::vector<char>> p_grid) {
 	grid = p_grid;
 	width = p_width;
-	heigth = p_height;
+	height = p_height;
 }
 
 Piece::~Piece() {
 	grid.clear();
 	width = 0;
-	heigth = 0;
+	height = 0;
 }
 
 Piece
 Piece::rotate() {
 	std::vector<std::vector <char>> rotated;
 
-	for (int i = heigth - 1; i >= 0; --i) {
+	for (int i = height - 1; i >= 0; --i) {
 		std::vector<char> row;
 
 		for (int j = 0; j < width; ++j) {
@@ -40,7 +40,7 @@ Piece::rotate() {
 		rotated.push_back(row);
 	}
 	
-	return Piece(heigth, width, rotated);
+	return Piece(height, width, rotated);
 }
 
 Piece
@@ -50,7 +50,7 @@ Piece::flip() {
 	for (int i = width - 1; i >= 0; --i) {
 		flipped.push_back(grid.at(i));
 	}
-	return Piece(width, heigth, flipped);
+	return Piece(width, height, flipped);
 }
 
 char
@@ -60,7 +60,7 @@ Piece::get(int x, int y) {
 
 void
 Piece::print() {
-	for (int i = 0; i < heigth; ++i) {
+	for (int i = 0; i < height; ++i) {
 		for (int j = 0; j < width; ++j)
 		{
 			std::string character = grid.at(j).at(i) == 0 ? " " : "#";

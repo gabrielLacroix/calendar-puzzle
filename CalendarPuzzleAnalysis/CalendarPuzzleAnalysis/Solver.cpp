@@ -5,11 +5,12 @@
 static void solve(std::vector<std::vector<char>>& grid, std::vector<Piece>& pieces) {
 	std::cout << " Solving! ";
 
-	size_t grid_width = grid.size();
-	size_t grid_heigth = grid.at(0).size();
+	size_t gridWidth = grid.size();
+	size_t gridHeight = grid.at(0).size();
 
-	for (int x = 0; x < grid_width; ++x) {
-		for (int y = 0; y < grid_heigth; ++y) {
+
+	for (int x = 0; x < gridWidth; ++x) {
+		for (int y = 0; y < gridHeight; ++y) {
 			
 
 

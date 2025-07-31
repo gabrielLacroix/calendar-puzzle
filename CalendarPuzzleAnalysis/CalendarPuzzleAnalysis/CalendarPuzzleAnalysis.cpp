@@ -118,8 +118,8 @@ std::vector<Piece> definePieces() {
 void
 printGrid(const std::vector<std::vector<char>> grid) {
 	int width = grid.size();
-	int heigth = grid.at(0).size();
-	for (int i = 0; i < heigth; ++i) {
+	int height = grid.at(0).size();
+	for (int i = 0; i < height; ++i) {
 		for (int j = 0; j < width; ++j)
 		{
 			std::string character = grid.at(j).at(i) == 0 ? "0" : "1";

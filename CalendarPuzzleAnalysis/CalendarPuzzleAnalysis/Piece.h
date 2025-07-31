@@ -10,7 +10,7 @@ class Piece
 
 	std::vector<std::vector<char>> grid;
 	std::size_t width;
-	std::size_t heigth;
+	std::size_t height;
 
 public:
 	std::size_t getWidth();
