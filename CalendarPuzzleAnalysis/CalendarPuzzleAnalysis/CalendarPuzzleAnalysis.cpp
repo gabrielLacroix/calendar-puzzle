@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include<format>
 #include "Piece.h"
 
 std::vector<Piece> definePieces();
@@ -20,9 +21,21 @@ int main(int argc, char* argv[])
 	std::vector<char> grid = defineGrid();
 
 	std::vector<Piece> pieces = definePieces();
-	pieces[0].print();
-	pieces[0].rotate().print();
 
+	enum { N = 10 };
+	
+	for (int i = 0; i < N; ++i)
+	{
+		std::cout << std::format("Piece {}", i) << std::endl;
+		pieces[i].print();
+		std::cout << std::endl;
+		pieces[i].rotate().print();
+		std::cout << std::endl;
+		pieces[i].rotate().rotate().print();
+		std::cout << std::endl;
+		pieces[i].rotate().rotate().rotate().print();
+		std::cout << std::endl << std::endl;
+	}
 }
 
 std::vector<char> defineGrid() {
